@@ -85,13 +85,16 @@ public class BslGameEngine implements GameEngineAPI
     {
         this.completed = completed;
     }
-    @Override
-    public boolean start() // must be dynamic
+/*    @Override
+    public boolean start(int level) // must be dynamic
     {
          // let the game begin
         // change status in the database to level one in progess......
         //change level
         //change status
+        this.setLevel(level);
+
+
 
 
 
@@ -105,7 +108,7 @@ public class BslGameEngine implements GameEngineAPI
         return false;
     }
     @Override
-    public boolean nextLevel()
+    public boolean nextLevel(int level)
     {
         return false;
     }
@@ -118,6 +121,18 @@ public class BslGameEngine implements GameEngineAPI
     public boolean reset()
     {
         return false;
+    }*/
+    //for creating a user
+    @Override
+    public void createPlayer(int level, int score, String status, String name, boolean completed)
+    {
+
+    }
+
+    @Override
+    public User userByName(String name)
+    {
+        return null;
     }
     // game api methods
 

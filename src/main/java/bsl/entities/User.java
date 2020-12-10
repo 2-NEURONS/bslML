@@ -9,6 +9,11 @@ public class User extends BslGameEngine
     public User()
     {
     }
+
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
     public int getScore()
     {
         return score;
@@ -26,6 +31,7 @@ public class User extends BslGameEngine
     {
         return "User{" +
                 "id=" + id +
+                "username"+username+
                 ", level=" + level +
                 ", score=" + score +
                 ", status='" + status + '\'' +
