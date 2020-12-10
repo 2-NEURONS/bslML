@@ -31,7 +31,7 @@ public class Route
         String username = new String(request.queryParams("username")); // read the username as a string from the front end
         int gameLevel = new Integer(request.queryParams("level").toString()); // read game level as a string and wrap into an integer
 
-
+        JOptionPane.showMessageDialog(null,username);
         jdbi.useExtension(GameEngineAPI.class, game -> game.createPlayer(gameLevel, 0, "started level "+gameLevel, username, false));
          //JOptionPane.showMessageDialog(null, "success");
         //do homepage stuff;

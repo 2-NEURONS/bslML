@@ -29,6 +29,7 @@ public class Main
         jdbi.installPlugin(new SqlObjectPlugin()); // just so we can use SQLObjects
         Route route = new Route(jdbi);  // so that we can reference our route handlers inside our http verbs
         port(8080); // start at port 80
+        port(getHerokuAssignedPort());
         post("/",route::homepageHandler); //let create a homepage route
 
 
@@ -37,5 +38,12 @@ public class Main
 
 
 
+    }
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 8080; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 }
